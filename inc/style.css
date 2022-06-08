@@ -1,0 +1,213 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;700;800;900&display=swap');
+
+:root {
+    --color-primary: #1DD05E;
+    --color-secondary: #A1A1A1;
+    --box-shadow: 0px 0px 10px rgba(165, 165, 165, 0.2);
+    --box-shadow-hover: rgba(0, 0, 0, 0.1) 0px 20px 25px -5px, rgba(0, 0, 0, 0.04) 0px 10px 10px -5px;
+    --box-shadow-primary: rgba(0, 255, 98, 0.309) 0px 20px 25px -5px, rgba(0, 255, 98, 0.309) 0px 10px 10px -5px;
+    --color-icon: #B6B6B6;
+    --padding-section: 20px 9%;
+    --padding-header: 0 9%;
+    --background-header: white;
+    --gradient: linear-gradient(0deg, rgba(51, 51, 51, 0.63) 0%, rgba(196, 196, 196, 0) 100%);
+}
+
+* {
+    /* border: 1px solid black; */
+    margin: 0;
+    padding: 0;
+    text-decoration: none;
+    outline: none;
+    font-family: Poppins, sans-serif;
+    box-sizing: border-box;
+}
+
+header {
+    padding: var(--padding-header);
+    box-shadow: var(--box-shadow);
+    background-color: var(--background-header);
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    height: 80px;
+    position: fixed;
+    top: 0;
+    right: 0;
+    left: 0;
+}
+
+.logo {
+    display: flex;
+    align-items: center;
+    color: black;
+}
+
+.logo h3 {
+    margin-left: 20px;
+}
+
+/* main */
+.btn-tambah-lagu {
+    margin-top: 80px;
+    padding: var(--padding-section);
+    padding-top: 40px;
+    border-radius: 10px;
+}
+
+.btn-tambah-lagu a {
+    background-color: var(--color-primary);
+    color: var(--background-header);
+    padding: 10px 15px;
+    border-radius: 10px;
+    transition: 0.3s ease;
+}
+
+.btn-tambah-lagu a:hover {
+    box-shadow: var(--box-shadow-primary);
+}
+
+main {
+    /* margin-top: 80px; */
+    padding: var(--padding-section);
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 40px 55px;
+}
+
+.lagu {
+    box-shadow: var(--box-shadow);
+    background-color: var(--background-header);
+    width: fit-content;
+    border-radius: 15px;
+    transition: 0.3s;
+}
+
+.lagu:hover {
+    box-shadow: var(--box-shadow-hover);
+    color: var(--background-header);
+}
+
+.lagu:hover {
+    background-color: var(--color-primary);
+}
+
+.lagu:hover .judul a {
+    color: var(--color-primary);
+    background-color: var(--background-header);
+}
+
+.cover-album {
+    border-radius: 15px;
+    padding: 15px;
+}
+
+.judul {
+    padding: 15px;
+    position: relative;
+}
+
+.judul a {
+    color: var(--background-header);
+    position: absolute;
+    right: 18px;
+    top: 18px;
+    font-size: 20px;
+    width: 40px;
+    height: 40px;
+    background-color: var(--color-primary);
+    text-align: center;
+    line-height: 40px;
+    border-radius: 50%;
+}
+
+/* pagination */
+.pagination {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 20px 0;
+}
+
+.pagination a {
+    padding: 15px;
+    margin: 0 10px;
+    font-size: 18px;
+    /* border: 2px solid #A1A1A1; */
+    color: var(--color-primary);
+}
+
+.pagination a:nth-child(1),
+.pagination a:nth-child(6) {
+    border: none;
+}
+
+.lirik {
+    padding: var(--padding-section);
+    margin-top: 80px;
+}
+
+.cover-lirik {
+    display: flex;
+    align-items: center;
+}
+
+.judul-lagu {
+    margin: 0 30px;
+}
+
+.lirik-lagu {
+    margin-top: 20px;
+}
+
+/* tambah-lagu */
+.tambah-lagu {
+    padding: var(--padding-section);
+    margin-top: 80px;
+}
+
+.tambah-lagu h1 {
+    color: var(--color-primary);
+    text-align: center;
+    margin-top: 10px;
+}
+
+.tambah-lagu form {
+    margin-top: 40px;
+}
+
+.tambah-lagu form label,
+.tambah-lagu form input,
+.tambah-lagu form textarea {
+    display: block;
+    font-size: 16px;
+    margin: 10px 0;
+}
+
+.tambah-lagu form label {
+    font-weight: 500;
+    font-size: 18px;
+}
+
+.tambah-lagu form input[type="text"],
+.tambah-lagu form textarea {
+    width: 100%;
+    padding: 10px;
+    border: 2px solid rgb(209, 209, 209);
+    border-radius: 10px;
+    margin-bottom: 30px;
+}
+
+.tambah-lagu form input[type="text"]:focus,
+.tambah-lagu form textarea:focus {
+    border: 2px solid var(--color-primary);
+}
+
+.tambah-lagu input[type="submit"] {
+    background-color: var(--color-primary);
+    color: var(--background-header);
+    border: none;
+    font-size: 18px;
+    padding: 5px 8px;
+    border-radius: 5px;
+}

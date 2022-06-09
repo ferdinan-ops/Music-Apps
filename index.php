@@ -16,7 +16,7 @@ include "inc/config.php";
 
 <body>
     <header>
-        <a href="#" class="logo">
+        <a href="./" class="logo">
             <img src="images/logo.png" width="50px">
             <h3>Spotify</h3>
         </a>
@@ -26,11 +26,13 @@ include "inc/config.php";
     if (isset($_GET['m'])) {
         if ($_GET['m'] == 'lirik') {
             include 'lirik.php';
+        } elseif ($_GET['m'] == 'tambah') {
+            include 'tambah-lagu.php';
         }
     } else {
     ?>
         <div class="btn-tambah-lagu">
-            <a href="tambah-lagu.html">Tambah Lagu</a>
+            <a href="./?m=tambah">Tambah Lagu</a>
         </div>
         <main>
             <?php
@@ -39,7 +41,7 @@ include "inc/config.php";
             ?>
                 <div class="lagu">
                     <div class="cover">
-                        <img src="images/cover2.jpg" width="300px" class="cover-album">
+                        <img src="<?= $k['lokasi'] ?>" width="300px" class="cover-album">
                     </div>
                     <div class="judul">
                         <h3><?= $k['judul'] ?></h3>
@@ -66,8 +68,6 @@ include "inc/config.php";
                 document.write(`</div>`);
             }
         </script> -->
-        <?php
-    } ?>
         </main>
         <div class="pagination">
             <a href="#" class="fa-solid fa-angle-left"></a>
@@ -77,6 +77,9 @@ include "inc/config.php";
             <a href="#">...</a>
             <a href="#" class="fa-solid fa-angle-right"></a>
         </div>
+    <?php
+    } ?>
+
 </body>
 
 </html>

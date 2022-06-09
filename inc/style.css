@@ -35,6 +35,7 @@ header {
     top: 0;
     right: 0;
     left: 0;
+    z-index: 999;
 }
 
 .logo {
@@ -142,22 +143,94 @@ main {
     border: none;
 }
 
+/* detail lagu */
 .lirik {
     padding: var(--padding-section);
-    margin-top: 80px;
+    /* margin-top: 80px; */
 }
 
 .cover-lirik {
+    color: var(--background-header);
     display: flex;
     align-items: center;
+    padding: var(--padding-section);
+    z-index: 3;
+    width: 100%;
+    /* background-color: #1DD05E; */
+}
+
+.bg-cover {
+    display: flex;
+    align-items: center;
+    margin-top: 80px;
+    background-repeat: no-repeat;
+    background-size: cover;
+    height: 400px;
+    /* filter: blur(3px); */
+    position: relative;
+}
+
+.bg-cover::after {
+    content: '';
+    display: block;
+    width: 100%;
+    height: 100%;
+    background-image: linear-gradient(to top, rgba(0, 0, 0, 1), rgba(0, 0, 0, 0));
+    bottom: 0;
+    position: absolute;
+}
+
+.music-play {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    align-items: center;
+    margin-top: 60px;
+}
+
+.waktu {
+    margin-bottom: 40px;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+}
+
+.range-music {
+    width: 100%;
+    /* background-color: #A1A1A1; */
+    margin: 0 20px;
+}
+
+.range-music input {
+    width: 100%;
+    height: 10px;
+    background: var(--color-primary);
+    appearance: none;
+    border-radius: 10px;
+}
+
+.range-music input::-webkit-slider-thumb {
+    appearance: none;
+    width: 15px;
+    height: 15px;
+    border-radius: 50%;
+    background: var(--background-header);
+}
+
+
+.play i {
+    font-size: 36px;
+    margin: 0 20px;
 }
 
 .judul-lagu {
     margin: 0 30px;
+    /* background-color: #1DD05E; */
+    width: 100%;
 }
 
-.lirik-lagu {
-    margin-top: 20px;
+.lirik {
+    margin: 20px 0;
 }
 
 /* tambah-lagu */
@@ -168,7 +241,6 @@ main {
 
 .tambah-lagu h1 {
     color: var(--color-primary);
-    text-align: center;
     margin-top: 10px;
 }
 
@@ -210,4 +282,30 @@ main {
     font-size: 18px;
     padding: 5px 8px;
     border-radius: 5px;
+    cursor: pointer;
+}
+
+.album {
+    /* background-color: var(--color-icon); */
+    width: fit-content;
+    padding: 50px;
+    border-radius: 10px;
+    border: 5px dotted var(--color-secondary);
+    color: var(--color-icon);
+    text-align: center;
+    cursor: pointer;
+}
+
+.album p {
+    font-size: 12px;
+    margin-top: 10px;
+}
+
+.album i {
+    font-size: 48px;
+}
+
+.tambah-lagu input[type="file"] {
+    margin-bottom: -20px;
+    opacity: 0;
 }

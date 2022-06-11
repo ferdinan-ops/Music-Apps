@@ -1,6 +1,10 @@
 <?php
 include "inc/config.php";
-if (!empty($_POST['judul'])) {
+if (!empty($_POST['judul']) && !empty($_POST['penyanyi']) && !empty($_POST['lirik'])) {
+    $judul = $_POST['judul'];
+    $penyanyi = $_POST['penyanyi'];
+    $lirik = $_POST['lirik'];
+
     // proses insert diskusi
     $folderUpload = "assets/upload";
 
@@ -17,11 +21,18 @@ if (!empty($_POST['judul'])) {
 
     # jika proses berhasil
     if ($prosesUpload) {
-        mysqli_query($konek, "INSERT INTO lagu (judul,penyanyi,lirik,nama_foto,lokasi) VALUES ('$_POST[judul]','$_POST[penyanyi]','$_POST[lirik]','$namaFile','$lokasiBaru')");
+        $sqlTambah = "INSERT INTO lagu (judul,penyanyi,lirik,nama_foto,lokasi) VALUES 
+        ('$judul','$penyanyi','$lirik','$namaFile','$lokasiBaru')";
+        if ($konek->query($sqlTambah) === TRUE) {
+            header('Location:./');
+        } else {
+            echo "Error: " . $sqlTambah . "<br>" . $konek->error;
+        }
+
+        $konek->close();
     } else {
         echo "<span style='color: red'>Upload file {$namaFile} gagal</span> <br>";
     }
-    // header("Location:./");
 } else {
-    // header("Location:./?m=tambah");
+    header('Location:./m=tambah');
 }

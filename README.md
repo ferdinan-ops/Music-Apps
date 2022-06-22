@@ -1,6 +1,3 @@
 # Music Apps
-![image](https://user-images.githubusercontent.com/84588706/173236555-54e1c889-2c03-4248-a9ce-5b1e00901d07.png)
-
-![image](https://user-images.githubusercontent.com/84588706/173236584-e886b777-d6f5-47f5-a9e9-9a9d8b99048a.png)
-
-![image](https://user-images.githubusercontent.com/84588706/173236597-0d0dad2e-6d1d-48b1-a884-5b386d07b9e4.png)
+![image](https://user-images.githubusercontent.com/84588706/175046769-27bff999-a4c4-45b6-ba36-1a42f8f576af.png)
+![image](https://user-images.githubusercontent.com/84588706/175047016-c00b838f-7ded-4788-8af9-7eacbb6ed115.png)

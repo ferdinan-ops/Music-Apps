@@ -6,11 +6,19 @@
     --box-shadow: 0px 0px 10px rgba(165, 165, 165, 0.2);
     --box-shadow-hover: rgba(0, 0, 0, 0.1) 0px 20px 25px -5px, rgba(0, 0, 0, 0.04) 0px 10px 10px -5px;
     --box-shadow-primary: rgba(0, 255, 98, 0.309) 0px 20px 25px -5px, rgba(0, 255, 98, 0.309) 0px 10px 10px -5px;
-    --color-icon: #B6B6B6;
+    --color-icon: white;
     --padding-section: 20px 9%;
     --padding-header: 0 9%;
     --background-header: white;
     --gradient: linear-gradient(0deg, rgba(51, 51, 51, 0.63) 0%, rgba(196, 196, 196, 0) 100%);
+}
+
+body {
+    --background-header: #181818;
+    --box-shadow-hover: rgba(4, 252, 58, 0.283) 0px 1px 2px, rgba(4, 252, 58, 0.283) 0px 2px 4px, rgba(4, 252, 58, 0.283) 0px 4px 8px, rgba(4, 252, 58, 0.283) 0px 8px 16px, rgba(4, 252, 58, 0.283) 0px 16px 32px, rgba(4, 252, 58, 0.283) 0px 32px 64px;
+    --box-shadow: none;
+    background-color: #111111;
+    color: white;
 }
 
 * {
@@ -40,11 +48,28 @@ header {
 .logo {
     display: flex;
     align-items: center;
-    color: black;
+    color: white;
 }
 
 .logo h3 {
     margin-left: 20px;
+}
+
+.search {
+    background-color: #111111;
+    border: 2px solid #30363D;
+    padding: 10px 15px;
+    border-radius: 30px;
+}
+
+.search input {
+    background: #111111;
+    border: none;
+    color: white;
+}
+
+.search input:focus .search {
+    border: 2px solid var(--color-primary);
 }
 
 /* main */
@@ -68,7 +93,6 @@ header {
 }
 
 main {
-    /* margin-top: 80px; */
     padding: var(--padding-section);
     display: grid;
     grid-template-columns: repeat(4, 1fr);
@@ -138,7 +162,7 @@ main {
 
 .pagination a:nth-child(1),
 .pagination a:nth-child(6) {
-    border: none;
+    /* border: none; */
 }
 
 /* detail lagu */
@@ -147,7 +171,7 @@ main {
 }
 
 .cover-lirik {
-    color: var(--background-header);
+    color: var(--color-icon);
     display: flex;
     align-items: center;
     padding: var(--padding-section);
@@ -162,6 +186,7 @@ main {
     background-repeat: no-repeat;
     background-size: cover;
     height: 400px;
+    /* filter: blur(3px); */
     position: relative;
 }
 
@@ -200,12 +225,10 @@ main {
     accent-color: var(--color-primary);
 }
 
-
 .play i {
     font-size: 36px;
     margin: 0 20px;
 }
-
 
 .judul-lagu {
     margin: 0 30px;
@@ -214,6 +237,10 @@ main {
 
 .lirik {
     margin: 20px 0;
+}
+
+.lirik-lagu h2 {
+    color: var(--color-primary);
 }
 
 /* tambah-lagu */
@@ -248,9 +275,11 @@ main {
 .tambah-lagu form textarea {
     width: 100%;
     padding: 10px;
-    border: 2px solid rgb(209, 209, 209);
+    border: 2px solid #30363D;
     border-radius: 10px;
     margin-bottom: 30px;
+    background: #111111;
+    color: white;
 }
 
 .tambah-lagu form input[type="text"]:focus,
@@ -290,4 +319,41 @@ main {
 .tambah-lagu input[type="file"] {
     margin-bottom: -20px;
     opacity: 0;
+}
+
+/* mobile */
+@media only screen and (max-width: 768px) {
+    .search input {
+        display: none;
+    }
+
+    .search {
+        background-color: var(--background-header);
+        border: none;
+    }
+
+    main {
+        grid-template-columns: repeat(1, 1fr);
+        gap: 50px 0;
+    }
+
+    .lagu {
+        width: 100%;
+    }
+
+    .cover-album {
+        width: 100%;
+    }
+
+    .cover-lirik {
+        flex-direction: column;
+    }
+
+    .bg-cover {
+        height: 700px;
+    }
+
+    .lirik-lagu pre {
+        font-size: 12px;
+    }
 }

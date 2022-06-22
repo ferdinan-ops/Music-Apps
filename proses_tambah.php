@@ -3,7 +3,7 @@ include "inc/config.php";
 if (!empty($_POST['judul']) && !empty($_POST['penyanyi']) && !empty($_POST['lirik'])) {
     $judul = $_POST['judul'];
     $penyanyi = $_POST['penyanyi'];
-    $lirik = $_POST['lirik'];
+    $lirik = addslashes($_POST['lirik']);
 
     // proses insert diskusi
     $folderUpload = "assets/upload";
